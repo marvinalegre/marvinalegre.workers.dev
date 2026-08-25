@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marvin Alegre's Home Page</title>
 
+    <link rel="preload" href="assets/images/terminal.avif" as="image" />
+    <link rel="preload" href="assets/images/llm.avif" as="image" />
+    <link rel="preload" href="assets/images/nvim-with-tmux.avif" as="image" />
+    <link rel="preload" href="assets/images/mobile-first.avif" as="image" />
+
     <style>
       body {
         margin: 0;
@@ -32,6 +37,27 @@
 
       .container {
         margin: 1rem;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      #hint {
+        animation: pulse 2s ease-in-out infinite;
+
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        margin: 0;
       }
     </style>
   </head>
@@ -375,7 +401,9 @@ which               13 | #
       <font size="-1">last update: August 20, 2026</font>
     </div>
 
-    <img src="./assets/images/terminal.png" style="width: 100%" />
+    <div id="gallery" style="position: relative; display: inline-block">
+      <img src="./assets/images/terminal.png" style="width: 100%" />
+    </div>
 
     <script>
       const notes = document.getElementById("notes");
@@ -390,16 +418,41 @@ which               13 | #
           : "See less";
       });
 
+      // TODO: support mobile
+      // someone: MOBILE FIRST!
+      let index = 0;
+      const srcs = ["terminal", "llm", "nvim-with-tmux", "mobile-first"];
       const img = document.querySelector("img");
+      const hint = document.createElement("p");
+      hint.id = "hint";
+      hint.textContent = "Try pressing →";
+
+      const handler = (e) => {
+        if (e.key === "ArrowRight") {
+          if (hint) hint.remove();
+          img.src = `/assets/images/${srcs[++index % srcs.length]}.avif`;
+        }
+        if (e.key === "ArrowLeft")
+          img.src = `/assets/images/${srcs[(index = (index - 1 + srcs.length) % srcs.length)]}.avif`;
+      };
 
       const observer = new IntersectionObserver(([entry]) => {
         document.documentElement.classList.toggle(
           "hide-scrollbar",
           entry.isIntersecting,
         );
+        if (entry.isIntersecting) {
+          document.addEventListener("keydown", handler);
+        } else {
+          document.removeEventListener("keydown", handler);
+        }
       });
 
       observer.observe(img);
+
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        document.querySelector("#gallery").appendChild(hint);
+      }
     </script>
   </body>
 </html>
