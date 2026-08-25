@@ -428,12 +428,13 @@ which               13 | #
       hint.textContent = "Try pressing →";
 
       const handler = (e) => {
-        if (e.key === "ArrowRight") {
+        if (e.key === "ArrowRight" || (e.key === "Enter" && !e.shiftKey)) {
           if (hint) hint.remove();
           img.src = `/assets/images/${srcs[++index % srcs.length]}.avif`;
         }
-        if (e.key === "ArrowLeft")
-          img.src = `/assets/images/${srcs[(index = (index - 1 + srcs.length) % srcs.length)]}.avif`;
+        if (e.key === "ArrowLeft" || (e.key === "Enter" && e.shiftKey)) {
+          img.src = `/assets/images/${srcs[--index % srcs.length]}.avif`;
+        }
       };
 
       const observer = new IntersectionObserver(([entry]) => {
