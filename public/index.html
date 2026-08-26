@@ -434,7 +434,6 @@ which               13 | #
       const button = document.getElementById("toggle");
 
       button.addEventListener("click", () => {
-        console.log("hit");
         notes.classList.toggle("collapsed");
 
         button.textContent = notes.classList.contains("collapsed")
@@ -442,24 +441,45 @@ which               13 | #
           : "See less";
       });
 
-      // TODO: support mobile
-      // someone: MOBILE FIRST!
       let index = 0;
       const srcs = ["terminal", "llm", "nvim-with-tmux", "mobile-first"];
       const img = document.querySelector("img");
       const hint = document.createElement("p");
       hint.id = "hint";
-      hint.textContent = "Try pressing →";
+      document.querySelector("#gallery").appendChild(hint);
 
       const handler = (e) => {
         if (e.key === "ArrowRight" || (e.key === "Enter" && !e.shiftKey)) {
-          if (hint) hint.remove();
-          img.src = `/assets/images/${srcs[++index % srcs.length]}.avif`;
+          next();
         }
         if (e.key === "ArrowLeft" || (e.key === "Enter" && e.shiftKey)) {
-          img.src = `/assets/images/${srcs[--index % srcs.length]}.avif`;
+          prev();
         }
       };
+
+      let startX = 0;
+      function touchStartHandler(e) {
+        startX = e.touches[0].clientX;
+      }
+      function touchHandler(e) {
+        const endX = e.changedTouches[0].clientX;
+
+        if (startX - endX > 50) {
+          next();
+        } else if (endX - startX > 50) {
+          prev();
+        }
+      }
+
+      function next() {
+        if (hint) hint.remove();
+        index = (index + 1) % srcs.length;
+        img.src = `/assets/images/${srcs[index]}.avif`;
+      }
+      function prev() {
+        index = (index - 1 + srcs.length) % srcs.length;
+        img.src = `/assets/images/${srcs[index]}.avif`;
+      }
 
       const observer = new IntersectionObserver(([entry]) => {
         document.documentElement.classList.toggle(
@@ -468,15 +488,21 @@ which               13 | #
         );
         if (entry.isIntersecting) {
           document.addEventListener("keydown", handler);
+          document.addEventListener("touchstart", touchStartHandler);
+          document.addEventListener("touchend", touchHandler);
         } else {
           document.removeEventListener("keydown", handler);
+          document.removeEventListener("touchstart", touchStartHandler);
+          document.removeEventListener("touchend", touchHandler);
         }
       });
 
       observer.observe(img);
 
       if (window.matchMedia("(min-width: 1024px)").matches) {
-        document.querySelector("#gallery").appendChild(hint);
+        hint.textContent = "Try pressing →";
+      } else {
+        hint.textContent = "Try swiping left";
       }
     </script>
   </body>
