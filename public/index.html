@@ -4,506 +4,101 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marvin Alegre's Home Page</title>
-
-    <link rel="preload" href="assets/images/terminal.avif" as="image" />
-    <link rel="preload" href="assets/images/llm.avif" as="image" />
-    <link rel="preload" href="assets/images/nvim-with-tmux.avif" as="image" />
-    <link rel="preload" href="assets/images/mobile-first.avif" as="image" />
-
-    <style>
-      body {
-        margin: 0;
-      }
-
-      .hide-scrollbar {
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE/Edge */
-      }
-
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
-      }
-
-      .scroll-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
-        max-width: 100%;
-      }
-
-      /* Hide everything after the first five */
-      .collapsed > p:nth-of-type(n + 6) {
-        display: none;
-      }
-
-      .container {
-        margin: 1rem;
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.3;
-        }
-      }
-
-      #hint {
-        animation: pulse 2s ease-in-out infinite;
-
-        position: absolute;
-        bottom: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-        color: white;
-        margin: 0;
-      }
-    </style>
   </head>
   <body>
-    <div class="container">
-      <div align="right">
-        <a href="https://www.marvinalegre.workers.dev"
-          >https://www.marvinalegre.workers.dev</a
-        >
-      </div>
-
-      <h2>projects</h2>
-
-      <p>
-        <a href="https://basicsofx.marvinalegre.workers.dev">Basics of x</a>: a
-        searchable LLM output cache on the basics of things.
-      </p>
-
-      <p>
-        <a href="https://github.com/marvinalegre/mathforge">mathforge</a>: a
-        math problem generator in js.
-      </p>
-
-      <p>
-        <a href="https://chroism-clone.marvinalegre.workers.dev"
-          >chroism.com clone</a
-        >: an attempt to recreate and optimize the kakoi website for
-        low-bandwidth network connections.
-      </p>
-
-      <p>
-        <a href="https://www.jessealegre.com">jessealegre.com</a>: a photography
-        website designed by
-        <a href="https://www.facebook.com/jesse.alegre">Jesse Alegre</a>.
-      </p>
-
-      <p>
-        <a href="https://payment.marvinalegre.workers.dev">
-          Web Payment System with GCash Transaction Detection
-        </a>
-      </p>
-
-      <p>
-        <a href="https://math-arena.marvinalegre.workers.dev">MathArena</a>: an
-        elo rated collection of math exercises.
-      </p>
-
-      <p>
-        <a href="https://pokemath.marvinalegre.workers.dev">PokéMath</a>: catch
-        pokémons with mathematics.
-      </p>
-
-      <p>
-        <a href="https://whiteboard.marvinalegre.workers.dev">whiteboard</a>: a
-        minimalist message board where anyone can post. No accounts, no
-        profiles—just text.
-      </p>
-
-      <p>
-        <a href="https://store.marvinalegre.workers.dev">store</a>: a
-        <a href="https://en.wikipedia.org/wiki/Sari-sari_store"
-          >sari-sari store</a
-        >
-        website.
-      </p>
-
-      <p>
-        <a href="https://food.marvinalegre.workers.dev">food</a>: an interactive
-        version of the food list from Invive.
-      </p>
-
-      <p>
-        <a href="https://noche-buena-price-guide.pages.dev">
-          2024 Noche Buena Price Guide </a
-        >: an html version of the price guide released by DTI, with some js
-        spruce it up. A poster can't give you a search bar.
-      </p>
-
-      <p>
-        <a href="https://cscjobportal.pages.dev">CSC Job Portal</a>: a
-        reconstruction of Civil Service Commission's job portal with added
-        features.
-      </p>
-
-      <hr />
-
-      <h2>notes</h2>
-
-      <div class="collapsed" id="notes">
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a87ce2c-1214-83ec-a7ac-10d1e48fdeb7"
-            >linux over windows in se</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a7c5b1a-c034-83ec-be4b-c3741e215d73"
-            >basics of uv</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a7c49f1-554c-83ec-ad21-8f3c9eec828d"
-            >github repo forks explained</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a7b3a85-4700-83ec-be16-b1ee2a31cd34"
-            >how to setup a modern web service in python</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a755bdb-77a4-83ec-b94a-39a14be094ef"
-            >get historical context</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a730059-8e40-83ec-9b8a-f8651b91e1a2"
-            >software engineer hiring process</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a72d80e-774c-83ec-a2e4-bd96ebd783cd"
-            >assessing developer ability</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a7199a2-50c0-83ec-97ea-d5557ac7e803"
-            >essentials of debian linux</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a7179ee-39c0-83ec-b4d3-647e94a63973"
-            >git bisect basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a714a37-45e0-83ec-948a-555e71fe58f7"
-            >pass basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a713db6-cb04-83ec-94e8-37dfc6b65a88"
-            >gpg basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a70212b-1314-83ec-ade2-0ae363b72229"
-            >markdown basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a65c919-7a84-83ec-ae6a-5e60ad2cc1b5"
-            >browser apis basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a65c1b3-87c0-83ec-82ea-eb49bf5bf601"
-            >shadow dom explained</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a65be30-e554-83ec-9938-e52881440e69"
-            >astro basics guide</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a65b968-95e0-83ec-83d6-6acd0f4f7c9e"
-            >css grundlagen</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a658c42-507c-83ec-8341-911e179e7119"
-            >js import maps basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a64b4f8-5818-83ec-b656-ba338a3ad084"
-            >open graph basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a635191-03f0-83ec-9204-28937640d5e1"
-            >flex vs grid</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a6307ae-a964-83ec-b4c5-4f7c0a5f7162"
-            >flexbox css basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a5f6fb7-fb58-83ec-9f0e-17a60719e87e"
-            >linux sysadmin basics</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a76eefd-d7d8-83ec-8b03-e1da419ead46"
-            >linux primer</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a5f6438-f048-83ec-aa0a-77eeed2f1ac6"
-            >linux development folders</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a5f62d5-8eb0-83ec-84d8-5608675f07f1"
-            >linux in web servers</a
-          >
-        </p>
-
-        <p>
-          <a
-            href="https://chatgpt.com/share/6a5e2f18-080c-83ec-b348-8ce4b9461746"
-            >version control necessity</a
-          >
-        </p>
-      </div>
-
-      <button id="toggle">See more</button>
-
-      <hr />
-
-      <h2>top 20 commands from my history</h2>
-      <p>
-        Show me yours with
-        <a
-          href="https://github.com/marvinalegre/dotfiles/blob/main/scripts/.local/bin/topcmds"
-          >topcmds</a
-        >.
-      </p>
-
-      <pre class="scroll-wrap">
-26-Aug-26
-l                 1394 | ########################################
-c                  959 | ###########################
-s                  809 | #######################
-cd                 657 | ##################
-pnpm               349 | ##########
-ls                 290 | ########
-d                  228 | ######
-gl                 179 | #####
-tmux               143 | ####
-a                  142 | ####
-tmux-sessionizer   122 | ###
-rm                 118 | ###
-ci                 113 | ###
-nmcli              110 | ###
-p                  102 | ##
-g                  100 | ##
-mv                  90 | ##
-sudo                83 | ##
-adb                 83 | ##
-git                 75 | ##
-      </pre>
-
-      <pre class="scroll-wrap">
-20-Aug-26
-l                 1101 | ########################################
-cd                 481 | #################
-c                  435 | ###############
-ls                 282 | ##########
-pnpm               238 | ########
-s                  226 | ########
-tmux               120 | ####
-d                   91 | ###
-rm                  88 | ###
-adb                 82 | ##
-sudo                77 | ##
-nmcli               73 | ##
-uv                  65 | ##
-tmux-sessionizer    65 | ##
-vi                  60 | ##
-gl                  59 | ##
-mv                  54 | #
-du                  54 | #
-a                   53 | #
-mkdir               52 | #
-      </pre>
-
-      <pre class="scroll-wrap">
-03-Aug-26
-st                 448 | ########################################
-l                  359 | ################################
-c                  250 | ######################
-git                136 | ############
-cd                 110 | #########
-d                   93 | ########
-a                   68 | ######
-mv                  66 | #####
-open                56 | #####
-la                  45 | ####
-ci                  44 | ###
-pnpm                41 | ###
-rm                  33 | ##
-weasyprint          26 | ##
-br                  20 | #
-tree                17 | #
-ll                  16 | #
-mkdir               15 | #
-ls                  15 | #
-which               13 | #
-    </pre>
-
-      <hr />
-      If you have any questions or suggestions, write to
-      <em
-        >marvinalegredev at gmail
-        <script>
-          document.write("dot");
-        </script>
-        <script>
-          var a;
-          a = "well, maybe using an image is better ?";
-          document.write("com");
-        </script>
-      </em>
-      <hr />
-      <font size="-1">last update: August 26, 2026</font>
+    <div align="right">
+      <a href="https://www.marvinalegre.workers.dev"
+        >https://www.marvinalegre.workers.dev</a
+      >
     </div>
 
-    <div id="gallery" style="position: relative; display: inline-block">
-      <img src="./assets/images/terminal.png" style="width: 100%" />
-    </div>
+    <p>
+      <a href="https://basicsofx.marvinalegre.workers.dev">Basics of x</a>: a
+      searchable LLM output cache on the basics of things.
+    </p>
 
-    <script>
-      const notes = document.getElementById("notes");
-      const button = document.getElementById("toggle");
+    <p>
+      <a href="https://github.com/marvinalegre/mathforge">mathforge</a>: a math
+      problem generator in js.
+    </p>
 
-      button.addEventListener("click", () => {
-        notes.classList.toggle("collapsed");
+    <p>
+      <a href="https://chroism-clone.marvinalegre.workers.dev"
+        >chroism.com clone</a
+      >: an attempt to recreate and optimize the kakoi website for low-bandwidth
+      network connections.
+    </p>
 
-        button.textContent = notes.classList.contains("collapsed")
-          ? "See more"
-          : "See less";
-      });
+    <p>
+      <a href="https://www.jessealegre.com">jessealegre.com</a>: a photography
+      website designed by
+      <a href="https://www.facebook.com/jesse.alegre">Jesse Alegre</a>.
+    </p>
 
-      let index = 0;
-      const srcs = ["terminal", "llm", "nvim-with-tmux", "mobile-first"];
-      const img = document.querySelector("img");
-      const hint = document.createElement("p");
-      hint.id = "hint";
-      document.querySelector("#gallery").appendChild(hint);
+    <p>
+      <a href="https://payment.marvinalegre.workers.dev">
+        Web Payment System with GCash Transaction Detection
+      </a>
+    </p>
 
-      const handler = (e) => {
-        if (e.key === "ArrowRight" || (e.key === "Enter" && !e.shiftKey)) {
-          next();
-        }
-        if (e.key === "ArrowLeft" || (e.key === "Enter" && e.shiftKey)) {
-          prev();
-        }
-      };
+    <p>
+      <a href="https://math-arena.marvinalegre.workers.dev">MathArena</a>: an
+      elo rated collection of math exercises.
+    </p>
 
-      let startX = 0;
-      function touchStartHandler(e) {
-        startX = e.touches[0].clientX;
-      }
-      function touchHandler(e) {
-        const endX = e.changedTouches[0].clientX;
+    <p>
+      <a href="https://pokemath.marvinalegre.workers.dev">PokéMath</a>: catch
+      pokémons with mathematics.
+    </p>
 
-        if (startX - endX > 50) {
-          next();
-        } else if (endX - startX > 50) {
-          prev();
-        }
-      }
+    <p>
+      <a href="https://whiteboard.marvinalegre.workers.dev">whiteboard</a>: a
+      minimalist message board where anyone can post. No accounts, no
+      profiles—just text.
+    </p>
 
-      function next() {
-        if (hint) hint.remove();
-        index = (index + 1) % srcs.length;
-        img.src = `/assets/images/${srcs[index]}.avif`;
-      }
-      function prev() {
-        index = (index - 1 + srcs.length) % srcs.length;
-        img.src = `/assets/images/${srcs[index]}.avif`;
-      }
+    <p>
+      <a href="https://store.marvinalegre.workers.dev">store</a>: a
+      <a href="https://en.wikipedia.org/wiki/Sari-sari_store"
+        >sari-sari store</a
+      >
+      website.
+    </p>
 
-      const observer = new IntersectionObserver(([entry]) => {
-        document.documentElement.classList.toggle(
-          "hide-scrollbar",
-          entry.isIntersecting,
-        );
-        if (entry.isIntersecting) {
-          document.addEventListener("keydown", handler);
-          document.addEventListener("touchstart", touchStartHandler);
-          document.addEventListener("touchend", touchHandler);
-        } else {
-          document.removeEventListener("keydown", handler);
-          document.removeEventListener("touchstart", touchStartHandler);
-          document.removeEventListener("touchend", touchHandler);
-        }
-      });
+    <p>
+      <a href="https://food.marvinalegre.workers.dev">food</a>: an interactive
+      version of the food list from Invive.
+    </p>
 
-      observer.observe(img);
+    <p>
+      <a href="https://noche-buena-price-guide.pages.dev">
+        2024 Noche Buena Price Guide </a
+      >: an html version of the price guide released by DTI, with some js spruce
+      it up. A poster can't give you a search bar.
+    </p>
 
-      if (window.matchMedia("(min-width: 1024px)").matches) {
-        hint.textContent = "Try pressing →";
-      } else {
-        hint.textContent = "Try swiping left";
-      }
-    </script>
+    <p>
+      <a href="https://cscjobportal.pages.dev">CSC Job Portal</a>: a
+      reconstruction of Civil Service Commission's job portal with added
+      features.
+    </p>
+
+    <a href="things.html">Other things</a>.
+
+    <hr />
+    If you have any questions or suggestions, write to
+    <em
+      >marvinalegredev at gmail
+      <script>
+        document.write("dot");
+      </script>
+      <script>
+        var a;
+        a = "well, maybe using an image is better ?";
+        document.write("com");
+      </script>
+    </em>
+    <hr />
+    <font size="-1">last update: August 27, 2026</font>
   </body>
 </html>
